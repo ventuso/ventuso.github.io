@@ -3,8 +3,8 @@ layout: post
 title:  "Code Highlighting"
 date:   2015-05-06 14:00:00
 categories: code
-tags:
- - code
+published: true
+tags: [github, github-pages, jekyll]
 ---
 
 {% highlight ruby linenos %}

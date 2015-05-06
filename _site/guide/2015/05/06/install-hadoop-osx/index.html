@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Install Hadoop stack on OSX &#8211; Ventuso</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="keywords" content="guide">
+    <link rel="canonical" href="http://ventuso.github.io/guide/2015/05/06/install-hadoop-osx/">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/pixyll.css" type="text/css">
+    <link href="/css/syntax.css" rel="stylesheet">
+    <link href="/css/toc.css" rel="stylesheet">
+    <!-- Fonts -->
+    <link href='//fonts.googleapis.com/css?family=Merriweather:900,900italic,300,300italic' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Lato:900,300' rel='stylesheet' type='text/css'>
+    
+
+
+    <!-- Open Graph -->
+    <!-- From: https://github.com/mmistakes/hpstr-jekyll-theme/blob/master/_includes/head.html -->
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Install Hadoop stack on OSX">
+    <meta property="og:description" content="">
+    <meta property="og:url" content="http://ventuso.github.io/guide/2015/05/06/install-hadoop-osx/">
+    <meta property="og:site_name" content="Ventuso">
+
+    <!-- Icons -->
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" href="/ventuso-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="/ventuso-160x160.png" sizes="160x160">
+    <link rel="icon" type="image/png" href="/ventuso-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="/ventuso-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="/ventuso-32x32.png" sizes="32x32">
+</head>
+
+<body class="">
+  <div class="site-wrap">
+    <header class="site-header px2 px-responsive">
+  <div class="mt2 wrap">
+    <div class="measure">
+      <a href="http://ventuso.github.io" class="site-title">Ventuso</a>
+      <nav class="site-nav right">
+        <a href="/about/">About</a>
+<a href="/contact/">Contact</a>
+
+      </nav>
+      <div class="clearfix"></div>
+      
+    </div>
+  </div>
+</header>
+
+
+    <div class="post p2 p-responsive wrap" role="main">
+      <div class="measure">
+         
+
+
+<div class="post-header mb2">
+  <h1>Install Hadoop stack on OSX</h1>
+  <span class="post-meta">May 6, 2015</span><br>
+  
+  <span class="post-meta small">2 minute read</span>
+</div>
+
+<article class="post-content">
+  <div id="toc-container">
+   <table class="toc" id="toc">
+      <tbody>
+         <tr>
+            <td>
+               <div id="toctitle">
+                  <h2>Contents</h2>
+               </div>
+               <ul>
+                  <li class="toc_level-1 toc_section-1">
+                     <a href="#tocAnchor-1-1"><span class="tocnumber">1</span> <span class="toctext">SSH Setup and Key Generation</span></a>
+                  </li>
+                  <li class="toc_level-1 toc_section-2">
+                     <a href="#tocAnchor-1-2"><span class="tocnumber">2</span> <span class="toctext">Install HomeBrew</span></a>
+                  </li>
+                  <li class="toc_level-1 toc_section-3">
+                     <a href="#tocAnchor-1-3"><span class="tocnumber">3</span> <span class="toctext">Install Hadoop</span></a>
+                  </li>
+                  <li class="toc_level-1 toc_section-4">
+                     <a href="#tocAnchor-1-4"><span class="tocnumber">4</span> <span class="toctext">Configuring Hadoop in Pseudo Distributed Mode</span></a>
+                     <ul>
+                        <li class="toc_level-2 toc_section-5">
+                           <a href="#tocAnchor-1-4-1"><span class="tocnumber">4.1</span> <span class="toctext">Edit core-site.xml</span></a>
+                        </li>
+                        <li class="toc_level-2 toc_section-6">
+                           <a href="#tocAnchor-1-4-2"><span class="tocnumber">4.2</span> <span class="toctext">Edit hdfs-site.xml</span></a>
+                        </li>
+                        <li class="toc_level-2 toc_section-7">
+                           <a href="#tocAnchor-1-4-3"><span class="tocnumber">4.3</span> <span class="toctext">Edit yarn-site.xml</span></a>
+                        </li>
+                        <li class="toc_level-2 toc_section-8">
+                           <a href="#tocAnchor-1-4-4"><span class="tocnumber">4.4</span> <span class="toctext">Edit mapred-site.xml</span></a>
+                        </li>
+                        <li class="toc_level-2 toc_section-9">
+                           <a href="#tocAnchor-1-4-5"><span class="tocnumber">4.5</span> <span class="toctext">Verifying Hadoop Installation</span></a>
+                        </li>
+                     </ul>
+                  </li>
+               </ul>
+            </td>
+         </tr>
+      </tbody>
+   </table>
+</div><h1 id="tocAnchor-1-1">SSH Setup and Key Generation</h1>
+
+<p>SSH setup is required to do different operations on a cluster such as starting, stopping, distributed daemon shell operations. To authenticate different users of Hadoop, it is required to provide public/private key pair for a Hadoop user and share it with different users.</p>
+
+<p>The following commands are used for generating a key value pair using SSH. Copy the public keys form id<em>rsa.pub to authorized</em>keys, and provide the owner with read and write permissions to authorized_keys file respectively.</p>
+
+<div class="highlight">
+   <pre>
+      <code class="language-sh" data-lang="sh">ssh-keygen -t rsa 
+cat ~/.ssh/id_rsa.pub &gt;&gt; ~/.ssh/authorized_keys 
+chmod <span class="m">0600</span> ~/.ssh/authorized_keys</code>
+   </pre>
+</div>
+
+<h1 id="tocAnchor-1-2">Install HomeBrew</h1>
+
+<p>Paste the following command at the terminal:</p>
+
+<div class="highlight">
+   <pre>
+      <code class="language-sh" data-lang="sh">ruby -e <span class="s2">"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"</span></code>
+   </pre>
+</div>
+
+<p>Perform update all HomeBrew recipes</p>
+
+<div class="highlight">
+   <pre>
+      <code class="language-sh" data-lang="sh">brew update</code>
+   </pre>
+</div>
+
+<h1 id="tocAnchor-1-3">Install Hadoop</h1>
+
+<div class="highlight">
+   <pre>
+      <code class="language-sh" data-lang="sh">brew install hadoop</code>
+   </pre>
+</div>
+
+<p>Hadoop will be install in the following directory ( x.x.x is the Hadoop version)</p>
+<div class="highlight">
+   <pre>
+      <code class="language-text" data-lang="text">/usr/local/Cellar/hadoop/x.x.x
+</code>
+   </pre>
+</div>
+<h1 id="tocAnchor-1-4">Configuring Hadoop in Pseudo Distributed Mode</h1>
+
+<h2 id="tocAnchor-1-4-1">Edit core-site.xml</h2>
+
+<p>The <strong>core-site.xml</strong> file contains information such as the port number used for Hadoop instance, memory allocated for the file system, memory limit for storing the data, and size of Read/Write buffers.</p>
+
+<p>The file can be located at <em>/usr/local/Cellar/hadoop/x.x.x/libexec/etc/hadoop/core-site.xml</em>. Open the core-site.xml and add the following properties in between  <em>&lt;configuration&gt;</em> and  <em>&lt;/configuration&gt;</em> tags.</p>
+
+<div class="highlight">
+   <pre>
+      <code class="language-xml" data-lang="xml"><span class="nt">&lt;configuration&gt;</span>
+    <span class="nt">&lt;property&gt;</span>
+        <span class="nt">&lt;name&gt;</span>hadoop.tmp.dir<span class="nt">&lt;/name&gt;</span>
+        <span class="nt">&lt;value&gt;</span>/usr/local/Cellar/hadoop/hdfs/tmp<span class="nt">&lt;/value&gt;</span>
+        <span class="nt">&lt;description&gt;</span>A base for other temporary directories.<span class="nt">&lt;/description&gt;</span>
+    <span class="nt">&lt;/property&gt;</span>
+    <span class="nt">&lt;property&gt;</span>
+        <span class="nt">&lt;name&gt;</span>fs.default.name<span class="nt">&lt;/name&gt;</span>
+        <span class="nt">&lt;value&gt;</span>hdfs://localhost:9000<span class="nt">&lt;/value&gt;</span>
+    <span class="nt">&lt;/property&gt;</span>
+<span class="nt">&lt;/configuration&gt;</span></code>
+   </pre>
+</div>
+
+<h2 id="tocAnchor-1-4-2">Edit hdfs-site.xml</h2>
+
+<p>The <strong>hdfs-site.xml</strong> file contains information such as the value of replication data, namenode path, and datanode paths of your local file systems. It means the place where you want to store the Hadoop infrastructure.</p>
+
+<p>The file can be located at <em>/usr/local/Cellar/hadoop/x.x.x/libexec/etc/hadoop/hdfs-site.xml</em>. Open the core-site.xml and add the following properties in between  <em>&lt;configuration&gt;</em> and  <em>&lt;/configuration&gt;</em> tags.</p>
+
+<div class="highlight">
+   <pre>
+      <code class="language-xml" data-lang="xml"><span class="nt">&lt;configuration&gt;</span>
+    <span class="nt">&lt;property&gt;</span>
+        <span class="nt">&lt;name&gt;</span>dfs.replication<span class="nt">&lt;/name&gt;</span>
+        <span class="nt">&lt;value&gt;</span>1<span class="nt">&lt;/value&gt;</span>
+    <span class="nt">&lt;/property&gt;</span>
+    <span class="nt">&lt;property&gt;</span>
+        <span class="nt">&lt;name&gt;</span>dfs.name.dir<span class="nt">&lt;/name&gt;</span>
+        <span class="nt">&lt;value&gt;</span>file:///usr/local/Cellar/hadoop/hdfs/namenode <span class="nt">&lt;/value&gt;</span>
+    <span class="nt">&lt;/property&gt;</span>
+    <span class="nt">&lt;property&gt;</span>
+        <span class="nt">&lt;name&gt;</span>dfs.data.dir<span class="nt">&lt;/name&gt;</span>
+        <span class="nt">&lt;value&gt;</span>file:///usr/local/Cellar/hadoop/hdfs/datanode <span class="nt">&lt;/value&gt;</span>
+    <span class="nt">&lt;/property&gt;</span>
+<span class="nt">&lt;/configuration&gt;</span></code>
+   </pre>
+</div>
+
+<h2 id="tocAnchor-1-4-3">Edit yarn-site.xml</h2>
+
+<p>This file is used to configure yarn into Hadoop. It can be located at <em>/usr/local/Cellar/hadoop/x.x.x/libexec/etc/hadoop/yarn-site.xml</em> , open  and add the following properties in between the <em>&lt;configuration&gt;</em> and  <em>&lt;/configuration&gt;</em> tags in this file.</p>
+
+<div class="highlight">
+   <pre>
+      <code class="language-xml" data-lang="xml"><span class="nt">&lt;configuration&gt;</span>
+    <span class="nt">&lt;property&gt;</span>
+        <span class="nt">&lt;name&gt;</span>yarn.nodemanager.aux-services<span class="nt">&lt;/name&gt;</span>
+        <span class="nt">&lt;value&gt;</span>mapreduce_shuffle<span class="nt">&lt;/value&gt;</span>
+    <span class="nt">&lt;/property&gt;</span>
+<span class="nt">&lt;/configuration&gt;</span></code>
+   </pre>
+</div>
+
+<h2 id="tocAnchor-1-4-4">Edit mapred-site.xml</h2>
+
+<p>This file is used to specify which MapReduce framework we are using. By default, Hadoop contains a template of yarn-site.xml. First of all, it is required to copy the file from <strong>mapred-site.xml.template</strong> to <strong>mapred-site.xml</strong> file using the following command.</p>
+
+<div class="highlight">
+   <pre>
+      <code class="language-sh" data-lang="sh">cp mapred-site.xml.template mapred-site.xml</code>
+   </pre>
+</div>
+
+<p>It can be located at <em>/usr/local/Cellar/hadoop/x.x.x/libexec/etc/hadoop/mapred-site.xml.template</em>. After copied, Open <strong>mapred-site.xml</strong> file and add the following properties in between the  <em>&lt;configuration&gt;</em> and  <em>&lt;/configuration&gt;</em> tags in this file.</p>
+
+<div class="highlight">
+   <pre>
+      <code class="language-xml" data-lang="xml"><span class="nt">&lt;configuration&gt;</span>
+    <span class="nt">&lt;property&gt;</span>
+        <span class="nt">&lt;name&gt;</span>mapreduce.framework.name<span class="nt">&lt;/name&gt;</span>
+        <span class="nt">&lt;value&gt;</span>yarn<span class="nt">&lt;/value&gt;</span>
+    <span class="nt">&lt;/property&gt;</span>
+<span class="nt">&lt;/configuration&gt;</span></code>
+   </pre>
+</div>
+
+<h2 id="tocAnchor-1-4-5">Verifying Hadoop Installation</h2>
+
+<p>The following steps are used to verify the Hadoop installation.
+Go to:</p>
+
+<div class="highlight">
+   <pre>
+      <code class="language-sh" data-lang="sh">/usr/local/Cellar/hadoop/x.x.x/bin</code>
+   </pre>
+</div>
+
+<h3 id="step-1:-name-node-setup">Step 1: Name Node Setup</h3>
+
+</article>
+
+
+
+
+
+
+
+
+
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+  <div class="p2 wrap">
+    <div class="measure mt1 center">
+      <small>
+    <!--
+        Crafted with &lt;3 by <a href="http://johnotander.com">John Otander</a> (<a href="https://twitter.com/4lpine">@4lpine</a>).<br>
+        &lt;/&gt; available on <a href="https://github.com/johnotander/pixyll">Github</a>.
+    -->
+      </small>
+    </div>
+  </div>
+</footer>
+
+
+
+</body>
+</html>
