@@ -73,7 +73,7 @@
   <h1>Install Hadoop stack on OSX</h1>
   <span class="post-meta">May 6, 2015</span><br>
   
-  <span class="post-meta small">2 minute read</span>
+  <span class="post-meta small">4 minute read</span>
 </div>
 
 <article class="post-content">
@@ -180,6 +180,49 @@ Go to:</p>
 
 <h5 id="step-1:-name-node-setup">Step 1: Name Node Setup</h5>
 
+<p>Set up the namenode using the command “hdfs namenode -format” as follows.</p>
+
+<div class="highlight"><pre><code class="language-sh" data-lang="sh">hdfs namenode -format</code></pre></div>
+
+<h5 id="step-2:-verifying-hadoop-dfs">Step 2: Verifying Hadoop dfs</h5>
+
+<p>The following command is used to start dfs. Executing this command will start your Hadoop file system.</p>
+
+<div class="highlight"><pre><code class="language-sh" data-lang="sh">start-dfs.sh</code></pre></div>
+
+<h5 id="step-3:-verifying-yarn-script">Step 3: Verifying Yarn Script</h5>
+
+<p>The following command is used to start the yarn script. Executing this command will start your yarn daemons.</p>
+
+<div class="highlight"><pre><code class="language-sh" data-lang="sh">start-yarn.sh</code></pre></div>
+
+<h5 id="step-4:-accessing-hadoop-on-browser">Step 4: Accessing Hadoop on Browser</h5>
+
+<p>The default port number to access Hadoop is 50070. Use the following url to get Hadoop services on browser.</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">http://localhost:50070/
+</code></pre></div>
+<h5 id="step-5:-verify-all-applications-for-cluster">Step 5: Verify All Applications for Cluster</h5>
+
+<p>The default port number to access all applications of cluster is 8088. Use the following url to visit this service</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">http://localhost:8088/
+</code></pre></div>
+<h4 id="alias">Alias</h4>
+
+<p>To simplify life edit your ~/.profile using vim or your favorite editor and add the following two commands</p>
+
+<div class="highlight"><pre><code class="language-sh" data-lang="sh"><span class="nb">alias </span><span class="nv">hstart</span><span class="o">=</span><span class="s2">&quot;/usr/local/Cellar/hadoop/2.6.0/sbin/start-dfs.sh;/usr/local/Cellar/hadoop/2.6.0/sbin/start-yarn.sh&quot;</span>
+<span class="nb">alias </span><span class="nv">hstop</span><span class="o">=</span><span class="s2">&quot;/usr/local/Cellar/hadoop/2.6.0/sbin/stop-yarn.sh;/usr/local/Cellar/hadoop/2.6.0/sbin/stop-dfs.sh&quot;</span></code></pre></div>
+
+<p>and execute</p>
+
+<div class="highlight"><pre><code class="language-sh" data-lang="sh"><span class="nb">source</span> ~/.profile</code></pre></div>
+
+<p>Next time, we can run Hadoop just by typing </p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">hstart
+</code></pre></div>
+<p>and stop using</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">hstop
+</code></pre></div>
 </article>
 
 

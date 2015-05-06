@@ -123,3 +123,54 @@ Go to:
 {% endhighlight %}
 
 ##### Step 1: Name Node Setup
+Set up the namenode using the command “hdfs namenode -format” as follows.
+
+{% highlight sh linen %}
+hdfs namenode -format 
+{% endhighlight %}
+
+##### Step 2: Verifying Hadoop dfs
+The following command is used to start dfs. Executing this command will start your Hadoop file system.
+
+{% highlight sh linen %}
+start-dfs.sh 
+{% endhighlight %}
+
+##### Step 3: Verifying Yarn Script
+The following command is used to start the yarn script. Executing this command will start your yarn daemons.
+
+{% highlight sh linen %}
+start-yarn.sh
+{% endhighlight %}
+
+##### Step 4: Accessing Hadoop on Browser
+The default port number to access Hadoop is 50070. Use the following url to get Hadoop services on browser.
+
+	http://localhost:50070/
+
+##### Step 5: Verify All Applications for Cluster
+The default port number to access all applications of cluster is 8088. Use the following url to visit this service
+
+	http://localhost:8088/
+
+#### Alias
+To simplify life edit your ~/.profile using vim or your favorite editor and add the following two commands
+
+{% highlight sh linen %}
+alias hstart="/usr/local/Cellar/hadoop/2.6.0/sbin/start-dfs.sh;/usr/local/Cellar/hadoop/2.6.0/sbin/start-yarn.sh"
+alias hstop="/usr/local/Cellar/hadoop/2.6.0/sbin/stop-yarn.sh;/usr/local/Cellar/hadoop/2.6.0/sbin/stop-dfs.sh"
+{% endhighlight %}
+
+and execute
+
+{% highlight sh linen %}
+source ~/.profile
+{% endhighlight %}
+
+Next time, we can run Hadoop just by typing 
+    
+    hstart
+
+and stop using
+
+    hstop
