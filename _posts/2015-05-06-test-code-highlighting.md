@@ -1,8 +1,10 @@
 ---
 layout: post
-title:  "Test Code Highlighting !"
+title:  "Code Highlighting"
 date:   2015-05-06 14:00:00
 categories: code
+tags:
+ - code
 ---
 
 {% highlight ruby linenos %}
