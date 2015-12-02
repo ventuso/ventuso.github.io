@@ -37,7 +37,7 @@ chmod &lt;span class=&quot;m&quot;&gt;0600&lt;/span&gt; ~/.ssh/authorized_keys&l
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h3 id=&quot;configuring-hadoop-in-pseudo-distributed-mode&quot;&gt;Configuring Hadoop in Pseudo Distributed Mode&lt;/h3&gt;
 
-&lt;h4 id=&quot;edit-core-site.xml&quot;&gt;Edit core-site.xml&lt;/h4&gt;
+&lt;h4 id=&quot;edit-core-site-xml&quot;&gt;Edit core-site.xml&lt;/h4&gt;
 
 &lt;p&gt;The &lt;strong&gt;core-site.xml&lt;/strong&gt; file contains information such as the port number used for Hadoop instance, memory allocated for the file system, memory limit for storing the data, and size of Read/Write buffers.&lt;/p&gt;
 
@@ -55,7 +55,7 @@ chmod &lt;span class=&quot;m&quot;&gt;0600&lt;/span&gt; ~/.ssh/authorized_keys&l
     &lt;span class=&quot;nt&quot;&gt;&amp;lt;/property&amp;gt;&lt;/span&gt;
 &lt;span class=&quot;nt&quot;&gt;&amp;lt;/configuration&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;h4 id=&quot;edit-hdfs-site.xml&quot;&gt;Edit hdfs-site.xml&lt;/h4&gt;
+&lt;h4 id=&quot;edit-hdfs-site-xml&quot;&gt;Edit hdfs-site.xml&lt;/h4&gt;
 
 &lt;p&gt;The &lt;strong&gt;hdfs-site.xml&lt;/strong&gt; file contains information such as the value of replication data, namenode path, and datanode paths of your local file systems. It means the place where you want to store the Hadoop infrastructure.&lt;/p&gt;
 
@@ -76,7 +76,7 @@ chmod &lt;span class=&quot;m&quot;&gt;0600&lt;/span&gt; ~/.ssh/authorized_keys&l
     &lt;span class=&quot;nt&quot;&gt;&amp;lt;/property&amp;gt;&lt;/span&gt;
 &lt;span class=&quot;nt&quot;&gt;&amp;lt;/configuration&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;h4 id=&quot;edit-yarn-site.xml&quot;&gt;Edit yarn-site.xml&lt;/h4&gt;
+&lt;h4 id=&quot;edit-yarn-site-xml&quot;&gt;Edit yarn-site.xml&lt;/h4&gt;
 
 &lt;p&gt;This file is used to configure yarn into Hadoop. It can be located at &lt;em&gt;/usr/local/Cellar/hadoop/x.x.x/libexec/etc/hadoop/yarn-site.xml&lt;/em&gt; , open  and add the following properties in between the &lt;em&gt;&amp;lt;configuration&amp;gt;&lt;/em&gt; and  &lt;em&gt;&amp;lt;/configuration&amp;gt;&lt;/em&gt; tags in this file.&lt;/p&gt;
 
@@ -87,7 +87,7 @@ chmod &lt;span class=&quot;m&quot;&gt;0600&lt;/span&gt; ~/.ssh/authorized_keys&l
     &lt;span class=&quot;nt&quot;&gt;&amp;lt;/property&amp;gt;&lt;/span&gt;
 &lt;span class=&quot;nt&quot;&gt;&amp;lt;/configuration&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;h4 id=&quot;edit-mapred-site.xml&quot;&gt;Edit mapred-site.xml&lt;/h4&gt;
+&lt;h4 id=&quot;edit-mapred-site-xml&quot;&gt;Edit mapred-site.xml&lt;/h4&gt;
 
 &lt;p&gt;This file is used to specify which MapReduce framework we are using. By default, Hadoop contains a template of yarn-site.xml. First of all, it is required to copy the file from &lt;strong&gt;mapred-site.xml.template&lt;/strong&gt; to &lt;strong&gt;mapred-site.xml&lt;/strong&gt; file using the following command.&lt;/p&gt;
 
@@ -109,30 +109,30 @@ Go to:&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sh&quot; data-lang=&quot;sh&quot;&gt;/usr/local/Cellar/hadoop/x.x.x/bin&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;h5 id=&quot;step-1:-name-node-setup&quot;&gt;Step 1: Name Node Setup&lt;/h5&gt;
+&lt;h5 id=&quot;step-1-name-node-setup&quot;&gt;Step 1: Name Node Setup&lt;/h5&gt;
 
 &lt;p&gt;Set up the namenode using the command “hdfs namenode -format” as follows.&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sh&quot; data-lang=&quot;sh&quot;&gt;hdfs namenode -format&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;h5 id=&quot;step-2:-verifying-hadoop-dfs&quot;&gt;Step 2: Verifying Hadoop dfs&lt;/h5&gt;
+&lt;h5 id=&quot;step-2-verifying-hadoop-dfs&quot;&gt;Step 2: Verifying Hadoop dfs&lt;/h5&gt;
 
 &lt;p&gt;The following command is used to start dfs. Executing this command will start your Hadoop file system.&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sh&quot; data-lang=&quot;sh&quot;&gt;start-dfs.sh&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;h5 id=&quot;step-3:-verifying-yarn-script&quot;&gt;Step 3: Verifying Yarn Script&lt;/h5&gt;
+&lt;h5 id=&quot;step-3-verifying-yarn-script&quot;&gt;Step 3: Verifying Yarn Script&lt;/h5&gt;
 
 &lt;p&gt;The following command is used to start the yarn script. Executing this command will start your yarn daemons.&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sh&quot; data-lang=&quot;sh&quot;&gt;start-yarn.sh&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;h5 id=&quot;step-4:-accessing-hadoop-on-browser&quot;&gt;Step 4: Accessing Hadoop on Browser&lt;/h5&gt;
+&lt;h5 id=&quot;step-4-accessing-hadoop-on-browser&quot;&gt;Step 4: Accessing Hadoop on Browser&lt;/h5&gt;
 
 &lt;p&gt;The default port number to access Hadoop is 50070. Use the following url to get Hadoop services on browser.&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;http://localhost:50070/
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h5 id=&quot;step-5:-verify-all-applications-for-cluster&quot;&gt;Step 5: Verify All Applications for Cluster&lt;/h5&gt;
+&lt;h5 id=&quot;step-5-verify-all-applications-for-cluster&quot;&gt;Step 5: Verify All Applications for Cluster&lt;/h5&gt;
 
 &lt;p&gt;The default port number to access all applications of cluster is 8088. Use the following url to visit this service&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;http://localhost:8088/

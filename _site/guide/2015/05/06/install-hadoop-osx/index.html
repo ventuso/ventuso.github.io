@@ -106,7 +106,7 @@ chmod <span class="m">0600</span> ~/.ssh/authorized_keys</code></pre></div>
 </code></pre></div>
 <h3 id="configuring-hadoop-in-pseudo-distributed-mode">Configuring Hadoop in Pseudo Distributed Mode</h3>
 
-<h4 id="edit-core-site.xml">Edit core-site.xml</h4>
+<h4 id="edit-core-site-xml">Edit core-site.xml</h4>
 
 <p>The <strong>core-site.xml</strong> file contains information such as the port number used for Hadoop instance, memory allocated for the file system, memory limit for storing the data, and size of Read/Write buffers.</p>
 
@@ -124,7 +124,7 @@ chmod <span class="m">0600</span> ~/.ssh/authorized_keys</code></pre></div>
     <span class="nt">&lt;/property&gt;</span>
 <span class="nt">&lt;/configuration&gt;</span></code></pre></div>
 
-<h4 id="edit-hdfs-site.xml">Edit hdfs-site.xml</h4>
+<h4 id="edit-hdfs-site-xml">Edit hdfs-site.xml</h4>
 
 <p>The <strong>hdfs-site.xml</strong> file contains information such as the value of replication data, namenode path, and datanode paths of your local file systems. It means the place where you want to store the Hadoop infrastructure.</p>
 
@@ -145,7 +145,7 @@ chmod <span class="m">0600</span> ~/.ssh/authorized_keys</code></pre></div>
     <span class="nt">&lt;/property&gt;</span>
 <span class="nt">&lt;/configuration&gt;</span></code></pre></div>
 
-<h4 id="edit-yarn-site.xml">Edit yarn-site.xml</h4>
+<h4 id="edit-yarn-site-xml">Edit yarn-site.xml</h4>
 
 <p>This file is used to configure yarn into Hadoop. It can be located at <em>/usr/local/Cellar/hadoop/x.x.x/libexec/etc/hadoop/yarn-site.xml</em> , open  and add the following properties in between the <em>&lt;configuration&gt;</em> and  <em>&lt;/configuration&gt;</em> tags in this file.</p>
 
@@ -156,7 +156,7 @@ chmod <span class="m">0600</span> ~/.ssh/authorized_keys</code></pre></div>
     <span class="nt">&lt;/property&gt;</span>
 <span class="nt">&lt;/configuration&gt;</span></code></pre></div>
 
-<h4 id="edit-mapred-site.xml">Edit mapred-site.xml</h4>
+<h4 id="edit-mapred-site-xml">Edit mapred-site.xml</h4>
 
 <p>This file is used to specify which MapReduce framework we are using. By default, Hadoop contains a template of yarn-site.xml. First of all, it is required to copy the file from <strong>mapred-site.xml.template</strong> to <strong>mapred-site.xml</strong> file using the following command.</p>
 
@@ -178,30 +178,30 @@ Go to:</p>
 
 <div class="highlight"><pre><code class="language-sh" data-lang="sh">/usr/local/Cellar/hadoop/x.x.x/bin</code></pre></div>
 
-<h5 id="step-1:-name-node-setup">Step 1: Name Node Setup</h5>
+<h5 id="step-1-name-node-setup">Step 1: Name Node Setup</h5>
 
 <p>Set up the namenode using the command “hdfs namenode -format” as follows.</p>
 
 <div class="highlight"><pre><code class="language-sh" data-lang="sh">hdfs namenode -format</code></pre></div>
 
-<h5 id="step-2:-verifying-hadoop-dfs">Step 2: Verifying Hadoop dfs</h5>
+<h5 id="step-2-verifying-hadoop-dfs">Step 2: Verifying Hadoop dfs</h5>
 
 <p>The following command is used to start dfs. Executing this command will start your Hadoop file system.</p>
 
 <div class="highlight"><pre><code class="language-sh" data-lang="sh">start-dfs.sh</code></pre></div>
 
-<h5 id="step-3:-verifying-yarn-script">Step 3: Verifying Yarn Script</h5>
+<h5 id="step-3-verifying-yarn-script">Step 3: Verifying Yarn Script</h5>
 
 <p>The following command is used to start the yarn script. Executing this command will start your yarn daemons.</p>
 
 <div class="highlight"><pre><code class="language-sh" data-lang="sh">start-yarn.sh</code></pre></div>
 
-<h5 id="step-4:-accessing-hadoop-on-browser">Step 4: Accessing Hadoop on Browser</h5>
+<h5 id="step-4-accessing-hadoop-on-browser">Step 4: Accessing Hadoop on Browser</h5>
 
 <p>The default port number to access Hadoop is 50070. Use the following url to get Hadoop services on browser.</p>
 <div class="highlight"><pre><code class="language-text" data-lang="text">http://localhost:50070/
 </code></pre></div>
-<h5 id="step-5:-verify-all-applications-for-cluster">Step 5: Verify All Applications for Cluster</h5>
+<h5 id="step-5-verify-all-applications-for-cluster">Step 5: Verify All Applications for Cluster</h5>
 
 <p>The default port number to access all applications of cluster is 8088. Use the following url to visit this service</p>
 <div class="highlight"><pre><code class="language-text" data-lang="text">http://localhost:8088/
