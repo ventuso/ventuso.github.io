@@ -1,82 +1,106 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Install Hadoop stack on OSX &#8211; Ventuso</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <meta name="keywords" content="guide">
-    <link rel="canonical" href="http://ventuso.github.io/guide/2015/05/06/install-hadoop-osx/">
+<html lang="en-us">
 
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="/css/pixyll.css" type="text/css">
-    <link href="/css/syntax.css" rel="stylesheet">
-    <link href="/css/toc.css" rel="stylesheet">
-    <!-- Fonts -->
-    <link href='//fonts.googleapis.com/css?family=Merriweather:900,900italic,300,300italic' rel='stylesheet' type='text/css'>
-    <link href='//fonts.googleapis.com/css?family=Lato:900,300' rel='stylesheet' type='text/css'>
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
     
+      Install Hadoop stack on OSX &middot; Ventuso
+    
+  </title>
 
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/lanyon.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
 
-    <!-- Open Graph -->
-    <!-- From: https://github.com/mmistakes/hpstr-jekyll-theme/blob/master/_includes/head.html -->
-    <meta property="og:locale" content="en_US">
-    <meta property="og:type" content="article">
-    <meta property="og:title" content="Install Hadoop stack on OSX">
-    <meta property="og:description" content="">
-    <meta property="og:url" content="http://ventuso.github.io/guide/2015/05/06/install-hadoop-osx/">
-    <meta property="og:site_name" content="Ventuso">
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-precomposed.png">
+  <link rel="shortcut icon" href="/public/favicon.ico">
 
-    <!-- Icons -->
-    <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
-    <link rel="icon" type="image/png" href="/ventuso-192x192.png" sizes="192x192">
-    <link rel="icon" type="image/png" href="/ventuso-160x160.png" sizes="160x160">
-    <link rel="icon" type="image/png" href="/ventuso-96x96.png" sizes="96x96">
-    <link rel="icon" type="image/png" href="/ventuso-16x16.png" sizes="16x16">
-    <link rel="icon" type="image/png" href="/ventuso-32x32.png" sizes="32x32">
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
 </head>
 
-<body class="">
-  <div class="site-wrap">
-    <header class="site-header px2 px-responsive">
-  <div class="mt2 wrap">
-    <div class="measure">
-      <a href="http://ventuso.github.io" class="site-title">Ventuso</a>
-      <nav class="site-nav right">
-        <a href="/about/">About</a>
-<a href="/contact/">Contact</a>
 
-      </nav>
-      <div class="clearfix"></div>
-      
-    </div>
+  <body>
+
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p></p>
   </div>
-</header>
 
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
 
-    <div class="post p2 p-responsive wrap" role="main">
-      <div class="measure">
-         
+    
 
+    
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/about/">About Ventuso</a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </nav>
 
-<div class="post-header mb2">
-  <h1>Install Hadoop stack on OSX</h1>
-  <span class="post-meta">May 6, 2015</span><br>
-  
-  <span class="post-meta small">4 minute read</span>
+  <div class="sidebar-item">
+    <p>
+      &copy; 2015. All rights reserved.
+    </p>
+  </div>
 </div>
 
-<article class="post-content">
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Ventuso</a>
+            <small></small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+        
+
+
+<div class="post">
+  <h1 class="post-title">Install Hadoop stack on OSX</h1>
+  <span class="post-date">06 May 2015</span>
+  <span class="post-meta small">3 minute read</span>
   <h3 id="ssh-setup-and-key-generation">SSH Setup and Key Generation</h3>
 
 <p>SSH setup is required to do different operations on a cluster such as starting, stopping, distributed daemon shell operations. To authenticate different users of Hadoop, it is required to provide public/private key pair for a Hadoop user and share it with different users.</p>
@@ -85,13 +109,13 @@
 
 <div class="highlight"><pre><code class="language-sh" data-lang="sh">ssh-keygen -t rsa 
 cat ~/.ssh/id_rsa.pub &gt;&gt; ~/.ssh/authorized_keys 
-chmod <span class="m">0600</span> ~/.ssh/authorized_keys</code></pre></div>
+chmod 0600 ~/.ssh/authorized_keys</code></pre></div>
 
 <h3 id="install-homebrew">Install HomeBrew</h3>
 
 <p>Paste the following command at the terminal:</p>
 
-<div class="highlight"><pre><code class="language-sh" data-lang="sh">ruby -e <span class="s2">&quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;</span></code></pre></div>
+<div class="highlight"><pre><code class="language-sh" data-lang="sh">ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;</code></pre></div>
 
 <p>Perform update all HomeBrew recipes</p>
 
@@ -112,17 +136,17 @@ chmod <span class="m">0600</span> ~/.ssh/authorized_keys</code></pre></div>
 
 <p>The file can be located at <em>/usr/local/Cellar/hadoop/x.x.x/libexec/etc/hadoop/core-site.xml</em>. Open the core-site.xml and add the following properties in between  <em>&lt;configuration&gt;</em> and  <em>&lt;/configuration&gt;</em> tags.</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;configuration&gt;</span>
-    <span class="nt">&lt;property&gt;</span>
-        <span class="nt">&lt;name&gt;</span>hadoop.tmp.dir<span class="nt">&lt;/name&gt;</span>
-        <span class="nt">&lt;value&gt;</span>/usr/local/Cellar/hadoop/hdfs/tmp<span class="nt">&lt;/value&gt;</span>
-        <span class="nt">&lt;description&gt;</span>A base for other temporary directories.<span class="nt">&lt;/description&gt;</span>
-    <span class="nt">&lt;/property&gt;</span>
-    <span class="nt">&lt;property&gt;</span>
-        <span class="nt">&lt;name&gt;</span>fs.default.name<span class="nt">&lt;/name&gt;</span>
-        <span class="nt">&lt;value&gt;</span>hdfs://localhost:9000<span class="nt">&lt;/value&gt;</span>
-    <span class="nt">&lt;/property&gt;</span>
-<span class="nt">&lt;/configuration&gt;</span></code></pre></div>
+<div class="highlight"><pre><code class="language-xml" data-lang="xml">&lt;configuration&gt;
+    &lt;property&gt;
+        &lt;name&gt;hadoop.tmp.dir&lt;/name&gt;
+        &lt;value&gt;/usr/local/Cellar/hadoop/hdfs/tmp&lt;/value&gt;
+        &lt;description&gt;A base for other temporary directories.&lt;/description&gt;
+    &lt;/property&gt;
+    &lt;property&gt;
+        &lt;name&gt;fs.default.name&lt;/name&gt;
+        &lt;value&gt;hdfs://localhost:9000&lt;/value&gt;
+    &lt;/property&gt;
+&lt;/configuration&gt;</code></pre></div>
 
 <h4 id="edit-hdfs-site-xml">Edit hdfs-site.xml</h4>
 
@@ -130,31 +154,31 @@ chmod <span class="m">0600</span> ~/.ssh/authorized_keys</code></pre></div>
 
 <p>The file can be located at <em>/usr/local/Cellar/hadoop/x.x.x/libexec/etc/hadoop/hdfs-site.xml</em>. Open the core-site.xml and add the following properties in between  <em>&lt;configuration&gt;</em> and  <em>&lt;/configuration&gt;</em> tags.</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;configuration&gt;</span>
-    <span class="nt">&lt;property&gt;</span>
-        <span class="nt">&lt;name&gt;</span>dfs.replication<span class="nt">&lt;/name&gt;</span>
-        <span class="nt">&lt;value&gt;</span>1<span class="nt">&lt;/value&gt;</span>
-    <span class="nt">&lt;/property&gt;</span>
-    <span class="nt">&lt;property&gt;</span>
-        <span class="nt">&lt;name&gt;</span>dfs.name.dir<span class="nt">&lt;/name&gt;</span>
-        <span class="nt">&lt;value&gt;</span>file:///usr/local/Cellar/hadoop/hdfs/namenode <span class="nt">&lt;/value&gt;</span>
-    <span class="nt">&lt;/property&gt;</span>
-    <span class="nt">&lt;property&gt;</span>
-        <span class="nt">&lt;name&gt;</span>dfs.data.dir<span class="nt">&lt;/name&gt;</span>
-        <span class="nt">&lt;value&gt;</span>file:///usr/local/Cellar/hadoop/hdfs/datanode <span class="nt">&lt;/value&gt;</span>
-    <span class="nt">&lt;/property&gt;</span>
-<span class="nt">&lt;/configuration&gt;</span></code></pre></div>
+<div class="highlight"><pre><code class="language-xml" data-lang="xml">&lt;configuration&gt;
+    &lt;property&gt;
+        &lt;name&gt;dfs.replication&lt;/name&gt;
+        &lt;value&gt;1&lt;/value&gt;
+    &lt;/property&gt;
+    &lt;property&gt;
+        &lt;name&gt;dfs.name.dir&lt;/name&gt;
+        &lt;value&gt;file:///usr/local/Cellar/hadoop/hdfs/namenode &lt;/value&gt;
+    &lt;/property&gt;
+    &lt;property&gt;
+        &lt;name&gt;dfs.data.dir&lt;/name&gt;
+        &lt;value&gt;file:///usr/local/Cellar/hadoop/hdfs/datanode &lt;/value&gt;
+    &lt;/property&gt;
+&lt;/configuration&gt;</code></pre></div>
 
 <h4 id="edit-yarn-site-xml">Edit yarn-site.xml</h4>
 
 <p>This file is used to configure yarn into Hadoop. It can be located at <em>/usr/local/Cellar/hadoop/x.x.x/libexec/etc/hadoop/yarn-site.xml</em> , open  and add the following properties in between the <em>&lt;configuration&gt;</em> and  <em>&lt;/configuration&gt;</em> tags in this file.</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;configuration&gt;</span>
-    <span class="nt">&lt;property&gt;</span>
-        <span class="nt">&lt;name&gt;</span>yarn.nodemanager.aux-services<span class="nt">&lt;/name&gt;</span>
-        <span class="nt">&lt;value&gt;</span>mapreduce_shuffle<span class="nt">&lt;/value&gt;</span>
-    <span class="nt">&lt;/property&gt;</span>
-<span class="nt">&lt;/configuration&gt;</span></code></pre></div>
+<div class="highlight"><pre><code class="language-xml" data-lang="xml">&lt;configuration&gt;
+    &lt;property&gt;
+        &lt;name&gt;yarn.nodemanager.aux-services&lt;/name&gt;
+        &lt;value&gt;mapreduce_shuffle&lt;/value&gt;
+    &lt;/property&gt;
+&lt;/configuration&gt;</code></pre></div>
 
 <h4 id="edit-mapred-site-xml">Edit mapred-site.xml</h4>
 
@@ -164,12 +188,12 @@ chmod <span class="m">0600</span> ~/.ssh/authorized_keys</code></pre></div>
 
 <p>It can be located at <em>/usr/local/Cellar/hadoop/x.x.x/libexec/etc/hadoop/mapred-site.xml.template</em>. After copied, Open <strong>mapred-site.xml</strong> file and add the following properties in between the  <em>&lt;configuration&gt;</em> and  <em>&lt;/configuration&gt;</em> tags in this file.</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;configuration&gt;</span>
-    <span class="nt">&lt;property&gt;</span>
-        <span class="nt">&lt;name&gt;</span>mapreduce.framework.name<span class="nt">&lt;/name&gt;</span>
-        <span class="nt">&lt;value&gt;</span>yarn<span class="nt">&lt;/value&gt;</span>
-    <span class="nt">&lt;/property&gt;</span>
-<span class="nt">&lt;/configuration&gt;</span></code></pre></div>
+<div class="highlight"><pre><code class="language-xml" data-lang="xml">&lt;configuration&gt;
+    &lt;property&gt;
+        &lt;name&gt;mapreduce.framework.name&lt;/name&gt;
+        &lt;value&gt;yarn&lt;/value&gt;
+    &lt;/property&gt;
+&lt;/configuration&gt;</code></pre></div>
 
 <h4 id="verifying-hadoop-installation">Verifying Hadoop Installation</h4>
 
@@ -210,12 +234,12 @@ Go to:</p>
 
 <p>To simplify life edit your ~/.profile using vim or your favorite editor and add the following two commands</p>
 
-<div class="highlight"><pre><code class="language-sh" data-lang="sh"><span class="nb">alias </span><span class="nv">hstart</span><span class="o">=</span><span class="s2">&quot;/usr/local/Cellar/hadoop/2.6.0/sbin/start-dfs.sh;/usr/local/Cellar/hadoop/2.6.0/sbin/start-yarn.sh&quot;</span>
-<span class="nb">alias </span><span class="nv">hstop</span><span class="o">=</span><span class="s2">&quot;/usr/local/Cellar/hadoop/2.6.0/sbin/stop-yarn.sh;/usr/local/Cellar/hadoop/2.6.0/sbin/stop-dfs.sh&quot;</span></code></pre></div>
+<div class="highlight"><pre><code class="language-sh" data-lang="sh">alias hstart=&quot;/usr/local/Cellar/hadoop/2.6.0/sbin/start-dfs.sh;/usr/local/Cellar/hadoop/2.6.0/sbin/start-yarn.sh&quot;
+alias hstop=&quot;/usr/local/Cellar/hadoop/2.6.0/sbin/stop-yarn.sh;/usr/local/Cellar/hadoop/2.6.0/sbin/stop-dfs.sh&quot;</code></pre></div>
 
 <p>and execute</p>
 
-<div class="highlight"><pre><code class="language-sh" data-lang="sh"><span class="nb">source</span> ~/.profile</code></pre></div>
+<div class="highlight"><pre><code class="language-sh" data-lang="sh">source ~/.profile</code></pre></div>
 
 <p>Next time, we can run Hadoop just by typing </p>
 <div class="highlight"><pre><code class="language-text" data-lang="text">hstart
@@ -223,34 +247,55 @@ Go to:</p>
 <p>and stop using</p>
 <div class="highlight"><pre><code class="language-text" data-lang="text">hstop
 </code></pre></div>
-</article>
+</div>
 
 
-
-
-
-
-
-
+<div class="related">
+  <h2>Related Posts</h2>
+  <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="/guide/2015/12/31/latency-numbers-every-programmer-should-know/">
+            Latency Numbers Every Programmer Should Know
+            <small>31 Dec 2015</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/code/2015/05/06/test-code-highlighting/">
+            Hello World!
+            <small>06 May 2015</small>
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
+</div>
 
       </div>
     </div>
-  </div>
 
-  <footer class="footer">
-  <div class="p2 wrap">
-    <div class="measure mt1 center">
-      <small>
-    <!--
-        Crafted with &lt;3 by <a href="http://johnotander.com">John Otander</a> (<a href="https://twitter.com/4lpine">@4lpine</a>).<br>
-        &lt;/&gt; available on <a href="https://github.com/johnotander/pixyll">Github</a>.
-    -->
-      </small>
-    </div>
-  </div>
-</footer>
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
 
+    <script>
+      (function(document) {
+        var toggle = document.querySelector('.sidebar-toggle');
+        var sidebar = document.querySelector('#sidebar');
+        var checkbox = document.querySelector('#sidebar-checkbox');
 
+        document.addEventListener('click', function(e) {
+          var target = e.target;
 
-</body>
+          if(!checkbox.checked ||
+             sidebar.contains(target) ||
+             (target === checkbox || target === toggle)) return;
+
+          checkbox.checked = false;
+        }, false);
+      })(document);
+    </script>
+  </body>
 </html>

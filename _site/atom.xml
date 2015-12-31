@@ -1,14 +1,23 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Ventuso</title>
-    <description></description>
-    <link>localhost/</link>
-    <atom:link href="localhost/feed.xml" rel="self" type="application/rss+xml" />
-    
-      <item>
-        <title>Latency Numbers Every Programmer Should Know</title>
-        <description>&lt;h3 id=&quot;latency-comparison-numbers&quot;&gt;Latency Comparison Numbers&lt;/h3&gt;
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+ <title>Ventuso</title>
+ <link href="localhost/atom.xml" rel="self"/>
+ <link href="localhost/"/>
+ <updated>2015-12-31T12:51:43+07:00</updated>
+ <id>localhost</id>
+ <author>
+   <name></name>
+   <email></email>
+ </author>
+
+ 
+ <entry>
+   <title>Latency Numbers Every Programmer Should Know</title>
+   <link href="localhost/guide/2015/12/31/latency-numbers-every-programmer-should-know/"/>
+   <updated>2015-12-31T15:00:00+07:00</updated>
+   <id>localhost/guide/2015/12/31/latency-numbers-every-programmer-should-know</id>
+   <content type="html">&lt;h3 id=&quot;latency-comparison-numbers&quot;&gt;Latency Comparison Numbers&lt;/h3&gt;
 
 &lt;hr&gt;
 
@@ -123,15 +132,15 @@
 &lt;p&gt;By Jeff Dean: &lt;a href=&quot;http://research.google.com/people/jeff/&quot;&gt;http://research.google.com/people/jeff/&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;Originally by Peter Norvig: &lt;a href=&quot;http://norvig.com/21-days.html#answers&quot;&gt;http://norvig.com/21-days.html#answers&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Thu, 31 Dec 2015 15:00:00 +0700</pubDate>
-        <link>localhost/guide/2015/12/31/latency-numbers-every-programmer-should-know/</link>
-        <guid isPermaLink="true">localhost/guide/2015/12/31/latency-numbers-every-programmer-should-know/</guid>
-      </item>
-    
-      <item>
-        <title>Install Hadoop stack on OSX</title>
-        <description>&lt;h3 id=&quot;ssh-setup-and-key-generation&quot;&gt;SSH Setup and Key Generation&lt;/h3&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Install Hadoop stack on OSX</title>
+   <link href="localhost/guide/2015/05/06/install-hadoop-osx/"/>
+   <updated>2015-05-06T23:00:00+07:00</updated>
+   <id>localhost/guide/2015/05/06/install-hadoop-osx</id>
+   <content type="html">&lt;h3 id=&quot;ssh-setup-and-key-generation&quot;&gt;SSH Setup and Key Generation&lt;/h3&gt;
 
 &lt;p&gt;SSH setup is required to do different operations on a cluster such as starting, stopping, distributed daemon shell operations. To authenticate different users of Hadoop, it is required to provide public/private key pair for a Hadoop user and share it with different users.&lt;/p&gt;
 
@@ -276,24 +285,21 @@ alias hstop=&amp;quot;/usr/local/Cellar/hadoop/2.6.0/sbin/stop-yarn.sh;/usr/loca
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;and stop using&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;hstop
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
-        <pubDate>Wed, 06 May 2015 23:00:00 +0700</pubDate>
-        <link>localhost/guide/2015/05/06/install-hadoop-osx/</link>
-        <guid isPermaLink="true">localhost/guide/2015/05/06/install-hadoop-osx/</guid>
-      </item>
-    
-      <item>
-        <title>Hello World!</title>
-        <description>&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;class HelloWorldApp {
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Hello World!</title>
+   <link href="localhost/code/2015/05/06/test-code-highlighting/"/>
+   <updated>2015-05-06T21:00:00+07:00</updated>
+   <id>localhost/code/2015/05/06/test-code-highlighting</id>
+   <content type="html">&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;class HelloWorldApp {
     public static void main(String[] args) {
         System.out.println(&amp;quot;Hello World!&amp;quot;); // Display the string.
     }
 }&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-</description>
-        <pubDate>Wed, 06 May 2015 21:00:00 +0700</pubDate>
-        <link>localhost/code/2015/05/06/test-code-highlighting/</link>
-        <guid isPermaLink="true">localhost/code/2015/05/06/test-code-highlighting/</guid>
-      </item>
-    
-  </channel>
-</rss>
+</content>
+ </entry>
+ 
+
+</feed>

@@ -4,7 +4,7 @@ email:       support@ventuso.net
 author:      
 description: ""
 baseurl:     ""
-url:         "http://ventuso.github.io"
+url:         "localhost"
 
 # Google analytics
 google_analytics:
