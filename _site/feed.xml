@@ -7,6 +7,129 @@
     <atom:link href="http://ventuso.github.io/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>Latency Numbers Every Programmer Should Know</title>
+        <description>&lt;h3 id=&quot;latency-comparison-numbers&quot;&gt;Latency Comparison Numbers&lt;/h3&gt;
+
+&lt;hr&gt;
+
+&lt;table&gt;&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Operation&lt;/th&gt;
+&lt;th style=&quot;text-align: right&quot;&gt;Time in ns&lt;/th&gt;
+&lt;th style=&quot;text-align: center&quot;&gt;Time in ms&lt;/th&gt;
+&lt;th&gt;Comment&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;L1 cache reference&lt;/td&gt;
+&lt;td style=&quot;text-align: right&quot;&gt;0.5&lt;/td&gt;
+&lt;td style=&quot;text-align: center&quot;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Branch mispredict&lt;/td&gt;
+&lt;td style=&quot;text-align: right&quot;&gt;5&lt;/td&gt;
+&lt;td style=&quot;text-align: center&quot;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;L2 cache reference&lt;/td&gt;
+&lt;td style=&quot;text-align: right&quot;&gt;7&lt;/td&gt;
+&lt;td style=&quot;text-align: center&quot;&gt;&lt;/td&gt;
+&lt;td&gt;14x L1 cache&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Mutex lock/unlock&lt;/td&gt;
+&lt;td style=&quot;text-align: right&quot;&gt;25&lt;/td&gt;
+&lt;td style=&quot;text-align: center&quot;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Main memory reference&lt;/td&gt;
+&lt;td style=&quot;text-align: right&quot;&gt;100&lt;/td&gt;
+&lt;td style=&quot;text-align: center&quot;&gt;&lt;/td&gt;
+&lt;td&gt;20x L2 cache, 200x&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Compress 1K bytes with Zip&lt;/td&gt;
+&lt;td style=&quot;text-align: right&quot;&gt;3,000&lt;/td&gt;
+&lt;td style=&quot;text-align: center&quot;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Send 1K bytes over 1 Gbps network&lt;/td&gt;
+&lt;td style=&quot;text-align: right&quot;&gt;10,000&lt;/td&gt;
+&lt;td style=&quot;text-align: center&quot;&gt;0.01&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Read 4K randomly from SSD&lt;/td&gt;
+&lt;td style=&quot;text-align: right&quot;&gt;150,000&lt;/td&gt;
+&lt;td style=&quot;text-align: center&quot;&gt;0.15&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Read 1 MB sequentially from memory&lt;/td&gt;
+&lt;td style=&quot;text-align: right&quot;&gt;250,000&lt;/td&gt;
+&lt;td style=&quot;text-align: center&quot;&gt;0.25&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Round trip within same datacenter&lt;/td&gt;
+&lt;td style=&quot;text-align: right&quot;&gt;500,000&lt;/td&gt;
+&lt;td style=&quot;text-align: center&quot;&gt;0.5&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Read 1 MB sequentially from SSD&lt;/td&gt;
+&lt;td style=&quot;text-align: right&quot;&gt;1,000,000&lt;/td&gt;
+&lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
+&lt;td&gt;4X memory&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Disk seek&lt;/td&gt;
+&lt;td style=&quot;text-align: right&quot;&gt;10,000,000&lt;/td&gt;
+&lt;td style=&quot;text-align: center&quot;&gt;10&lt;/td&gt;
+&lt;td&gt;20x datacenter roundtrip&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Read 1 MB sequentially from disk&lt;/td&gt;
+&lt;td style=&quot;text-align: right&quot;&gt;20,000,000&lt;/td&gt;
+&lt;td style=&quot;text-align: center&quot;&gt;20&lt;/td&gt;
+&lt;td&gt;80x memory, 20X SSD&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Send packet CA-&amp;gt;Netherlands-&amp;gt;CA&lt;/td&gt;
+&lt;td style=&quot;text-align: right&quot;&gt;150,000,000&lt;/td&gt;
+&lt;td style=&quot;text-align: center&quot;&gt;150&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+
+&lt;h3 id=&quot;notes&quot;&gt;Notes&lt;/h3&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;1 ns = 10^-9 seconds&lt;/p&gt;
+
+&lt;p&gt;1 ms = 10^-3 seconds&lt;/p&gt;
+
+&lt;p&gt;Assuming ~1GB/sec SSD&lt;/p&gt;
+
+&lt;h3 id=&quot;credit&quot;&gt;Credit&lt;/h3&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;By Jeff Dean: &lt;a href=&quot;http://research.google.com/people/jeff/&quot;&gt;http://research.google.com/people/jeff/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Originally by Peter Norvig: &lt;a href=&quot;http://norvig.com/21-days.html#answers&quot;&gt;http://norvig.com/21-days.html#answers&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Thu, 31 Dec 2015 15:00:00 +0700</pubDate>
+        <link>http://ventuso.github.io/guide/2015/12/31/latency-numbers-every-programmer-should-know/</link>
+        <guid isPermaLink="true">http://ventuso.github.io/guide/2015/12/31/latency-numbers-every-programmer-should-know/</guid>
+      </item>
+    
+      <item>
         <title>Install Hadoop stack on OSX</title>
         <description>&lt;h3 id=&quot;ssh-setup-and-key-generation&quot;&gt;SSH Setup and Key Generation&lt;/h3&gt;
 

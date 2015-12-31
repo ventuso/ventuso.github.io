@@ -1,4 +1,7 @@
 source 'https://rubygems.org'
+gem 'jekyll'
 gem 'github-pages'
 gem 'jekyll-tagging'
 gem 'nokogiri'
+gem 'rb-fsevent'
+gem 'jekyll-paginate'

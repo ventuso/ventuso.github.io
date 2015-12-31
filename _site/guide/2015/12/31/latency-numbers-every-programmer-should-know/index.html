@@ -3,12 +3,12 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Ventuso</title>
+    <title>Latency Numbers Every Programmer Should Know &#8211; Ventuso</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    
-    <link rel="canonical" href="http://ventuso.github.io/">
+    <meta name="keywords" content="guide">
+    <link rel="canonical" href="http://ventuso.github.io/guide/2015/12/31/latency-numbers-every-programmer-should-know/">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/css/pixyll.css" type="text/css">
@@ -24,9 +24,9 @@
     <!-- From: https://github.com/mmistakes/hpstr-jekyll-theme/blob/master/_includes/head.html -->
     <meta property="og:locale" content="en_US">
     <meta property="og:type" content="article">
-    <meta property="og:title" content="Ventuso">
+    <meta property="og:title" content="Latency Numbers Every Programmer Should Know">
     <meta property="og:description" content="">
-    <meta property="og:url" content="http://ventuso.github.io/">
+    <meta property="og:url" content="http://ventuso.github.io/guide/2015/12/31/latency-numbers-every-programmer-should-know/">
     <meta property="og:site_name" content="Ventuso">
 
     <!-- Icons -->
@@ -66,16 +66,18 @@
 
     <div class="post p2 p-responsive wrap" role="main">
       <div class="measure">
-         <div class="home">
+         
 
-  <div class="posts">
-    
-      <div class="post">
-        <p class="post-meta">Dec 31, 2015</p>
-        <a href="/guide/2015/12/31/latency-numbers-every-programmer-should-know/" class="post-link"><h3 class="h2 post-title">Latency Numbers Every Programmer Should Know</h3></a>
-        <p class="post-summary">
-          
-            <h3 id="latency-comparison-numbers">Latency Comparison Numbers</h3>
+
+<div class="post-header mb2">
+  <h1>Latency Numbers Every Programmer Should Know</h1>
+  <span class="post-meta">Dec 31, 2015</span><br>
+  
+  <span class="post-meta small">1 minute read</span>
+</div>
+
+<article class="post-content">
+  <h3 id="latency-comparison-numbers">Latency Comparison Numbers</h3>
 
 <hr>
 
@@ -173,54 +175,33 @@
 </tr>
 </tbody></table>
 
-          
-        </p>
-      </div>
-    
-      <div class="post">
-        <p class="post-meta">May 6, 2015</p>
-        <a href="/guide/2015/05/06/install-hadoop-osx/" class="post-link"><h3 class="h2 post-title">Install Hadoop stack on OSX</h3></a>
-        <p class="post-summary">
-          
-            <h3 id="ssh-setup-and-key-generation">SSH Setup and Key Generation</h3>
+<h3 id="notes">Notes</h3>
 
-<p>SSH setup is required to do different operations on a cluster such as starting, stopping, distributed daemon shell operations. To authenticate different users of Hadoop, it is required to provide public/private key pair for a Hadoop user and share it with different users.</p>
+<hr>
 
-          
-        </p>
-      </div>
-    
-      <div class="post">
-        <p class="post-meta">May 6, 2015</p>
-        <a href="/code/2015/05/06/test-code-highlighting/" class="post-link"><h3 class="h2 post-title">Hello World!</h3></a>
-        <p class="post-summary">
-          
-            <div class="highlight"><pre><code class="language-java" data-lang="java"><span class="lineno">1</span> <span class="kd">class</span> <span class="nc">HelloWorldApp</span> <span class="o">{</span>
-<span class="lineno">2</span>     <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
-<span class="lineno">3</span>         <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Hello World!&quot;</span><span class="o">);</span> <span class="c1">// Display the string.</span>
-<span class="lineno">4</span>     <span class="o">}</span>
-<span class="lineno">5</span> <span class="o">}</span></code></pre></div>
+<p>1 ns = 10^-9 seconds</p>
 
-          
-        </p>
-      </div>
-    
-  </div>
+<p>1 ms = 10^-3 seconds</p>
 
-  <div class="pagination clearfix mb1 mt4">
-  <div class="left">
-    
-      <span class="pagination-item disabled">Newer</span>
-    
-  </div>
-  <div class="right">
-    
-      <span class="pagination-item disabled">Older</span>
-    
-  </div>
-</div>
+<p>Assuming ~1GB/sec SSD</p>
 
-</div>
+<h3 id="credit">Credit</h3>
+
+<hr>
+
+<p>By Jeff Dean: <a href="http://research.google.com/people/jeff/">http://research.google.com/people/jeff/</a></p>
+
+<p>Originally by Peter Norvig: <a href="http://norvig.com/21-days.html#answers">http://norvig.com/21-days.html#answers</a></p>
+
+</article>
+
+
+
+
+
+
+
+
 
       </div>
     </div>

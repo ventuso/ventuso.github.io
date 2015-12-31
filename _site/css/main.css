@@ -131,6 +131,17 @@ pre {
   display: table;
   clear: both; }
 
+table {
+  margin: 10px 0 15px 0;
+  border-collapse: collapse; }
+
+td, th {
+  border: 1px solid #ddd;
+  padding: 3px 10px; }
+
+th {
+  padding: 5px 10px; }
+
 /**
  * Icons
  */
